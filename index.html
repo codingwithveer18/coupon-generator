@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coupon Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Coupon Generator</h1>
+    <div class="container">
+      <!-- form to take inputs from user and preview it -->
+      <form id="couponForm">
+        <label for="orgName">Organization Name:</label>
+        <input type="text" id="orgName" name="orgName" required />
+
+        <label for="deal">Discount/Deal Description:</label>
+        <input type="text" id="deal" name="deal" required />
+
+        <label for="expiry">Expiry Date:</label>
+        <input type="date" id="expiry" name="expiry" required />
+
+        <button type="button" onclick="generateCoupon()">
+          Generate Coupon
+        </button>
+      </form>
+
+      <!-- this block will display the preview of the coupon & download it-->
+      <div id="preview" class="coupon">
+        <h3 id="Unique"></h3>
+        <h2 id="OrgName"></h2>
+        <p id="Deal"></p>
+        <p id="Expiry"></p>
+      </div>
+
+      <button id="downloadbtn" onclick="downloadCoupon()" style="display: none">
+        Download Coupon
+      </button>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  </body>
+</html>
